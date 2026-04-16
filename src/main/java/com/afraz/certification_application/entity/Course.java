@@ -8,7 +8,7 @@ public class Course {
 	private String title;
 	private Status status;
 	
-	User user;
+	private User user;
 
 	public long getCourseId() {
 		return courseId;

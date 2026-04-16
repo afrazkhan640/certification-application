@@ -15,6 +15,8 @@ import com.afraz.certification_application.dto.UserResponseDto;
 import com.afraz.certification_application.entity.Certificate;
 import com.afraz.certification_application.service.ApplicationService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api")
 public class UserController {
@@ -29,14 +31,14 @@ public class UserController {
 
 
 	@PostMapping("saveUser")
-	public UserResponseDto saveUser(@RequestBody UserRequestDto dto) {
+	public UserResponseDto saveUser(@Valid @RequestBody UserRequestDto dto) {
 	
 		UserResponseDto response= service.createUser(dto);
 		
 		return response;
 	}
 	@PostMapping("saveCourse/{id}")
-	public CourseResponseDto saveCourse(@RequestBody CourseRequestDto dto ,@PathVariable Long id) {
+	public CourseResponseDto saveCourse(@Valid @RequestBody CourseRequestDto dto ,@PathVariable Long id) {
 		
 		CourseResponseDto response=service.createCourse(dto, id);
 		return response;

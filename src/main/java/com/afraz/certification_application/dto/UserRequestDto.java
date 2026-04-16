@@ -1,7 +1,10 @@
 package com.afraz.certification_application.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class UserRequestDto {
 
+	@NotBlank(message="Name cannot be empty")
 	private String name;
 
 	
